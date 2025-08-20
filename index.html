@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elif Buse Holozlu - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Modern CSS */
+        :root {
+            --light-bg-color: #f8f8f8;
+            --light-text-color: #333;
+            --light-heading-color: #222;
+            --light-sidebar-bg: #fff;
+            --light-card-bg: #fff;
+            --light-card-border: #ddd;
+            --light-nav-btn-bg: #e0e0e0;
+            --light-nav-btn-text: #333;
+            --light-nav-btn-active-bg: #720a5a;
+            --light-nav-btn-active-text: #fff;
+            --light-link-color: #720a5a;
+            --light-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-theme {
+            --light-bg-color: #333;
+            --light-text-color: #eee;
+            --light-heading-color: #fff;
+            --light-sidebar-bg: #222;
+            --light-card-bg: #2a2a2a;
+            --light-card-border: #444;
+            --light-nav-btn-bg: #444;
+            --light-nav-btn-text: #eee;
+            --light-nav-btn-active-bg: #fcc7f0;
+            --light-nav-btn-active-text: #222;
+            --light-link-color: #fcc7f0;
+            --light-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg-color);
+            color: var(--light-text-color);
+            transition: background-color 0.3s, color 0.3s;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: none;
+        }
+
+        .sidebar {
+            width: 280px;
+            min-width: 280px;
+            flex-shrink: 0;
+            background-color: var(--light-sidebar-bg);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--light-nav-btn-active-bg);
+            margin-bottom: 1rem;
+        }
+
+        .name {
+            font-size: 1.5rem;
+            margin: 0;
+            color: var(--light-heading-color);
+            font-weight: bold;
+        }
+
+        .title {
+            color: var(--light-text-color);
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .sidebar-info {
+            width: 100%;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .sidebar-info .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .sidebar-info .info-item i {
+            color: var(--light-nav-btn-active-bg);
+            width: 20px;
+            text-align: center;
+        }
+
+        .sidebar-info .info-item p {
+            margin: 0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--light-text-color);
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--light-nav-btn-active-bg);
+            text-decoration: none;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-top: 1.5rem;
+            padding: 0.8rem;
+            border-radius: 20px;
+            background-color: var(--light-nav-btn-active-bg);
+            color: var(--light-nav-btn-active-text);
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s, opacity 0.3s;
+        }
+
+        .download-btn:hover {
+            opacity: 0.8;
+            text-decoration: none;
+        }
+
+        .download-btn i {
+            margin-right: 0.5rem;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 2rem;
+            background-color: var(--light-bg-color);
+            transition: background-color 0.3s;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn, .theme-toggle button {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: background-color 0.3s, color 0.3s, opacity 0.3s;
+        }
+
+        .nav-btn {
+            background-color: var(--light-nav-btn-bg);
+            color: var(--light-nav-btn-text);
+        }
+
+        .nav-btn:hover {
+            opacity: 0.8;
+        }
+
+        .nav-btn.active {
+            background-color: var(--light-nav-btn-active-bg);
+            color: var(--light-nav-btn-active-text);
+            opacity: 1;
+        }
+
+        .theme-toggle button {
+            background-color: transparent;
+            border: 2px solid var(--light-nav-btn-active-bg);
+            color: var(--light-nav-btn-active-bg);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .theme-toggle button:hover {
+            background-color: var(--light-nav-btn-active-bg);
+            color: var(--light-nav-btn-active-text);
+        }
+
+        .content-card {
+            display: none;
+            background-color: var(--light-card-bg);
+            border: 1px solid var(--light-card-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--light-box-shadow);
+        }
+
+        .content-card.active {
+            display: block;
+        }
+
+        .content-card h2, .content-card h3 {
+            margin-top: 0;
+            color: var(--light-heading-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .about-info-cards, .experience-container, .projects-list, .skills-categories-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .info-card, .experience-card, .project-card, .skills-category, .additional-skills-card {
+            padding: 1rem;
+            border: 1px solid var(--light-card-border);
+            border-radius: 8px;
+            background-color: var(--light-card-bg);
+        }
+
+        .project-tech-stack, .skills-list {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            background-color: var(--light-nav-btn-bg);
+            color: var(--light-text-color);
+            padding: 0.3rem 0.6rem;
+            border-radius: 5px;
+            font-size: 0.75rem;
+        }
+        
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--light-card-border);
+        }
+        
+        .language-item:last-child {
+            border-bottom: none;
+        }
+
+        .language-level {
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .level-native {
+            background-color: #e6f7ec;
+            color: #27854d;
+        }
+
+        .level-advanced {
+            background-color: #e0f2ff;
+            color: #0077c9;
+        }
+
+        .level-intermediate {
+            background-color: #fff8e6;
+            color: #a46f00;
+        }
+
+        .trainings-list .training-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--light-card-border);
+        }
+
+        .trainings-list .training-item:last-child {
+            border-bottom: none;
+        }
+
+        .training-status {
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .status-completed {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .status-ongoing {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            max-width: 500px;
+            margin-top: 1rem;
+        }
+
+        .contact-form label {
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid var(--light-card-border);
+            border-radius: 5px;
+            background-color: var(--light-sidebar-bg);
+            color: var(--light-text-color);
+            box-sizing: border-box;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-form button {
+            align-self: flex-start;
+            padding: 0.7rem 1.4rem;
+            border: none;
+            border-radius: 20px;
+            background-color: var(--light-nav-btn-active-bg);
+            color: var(--light-nav-btn-active-text);
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a {
+            color: var(--light-link-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+
+            .container {
+                flex-direction: column;
+                width: 100%;
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .sidebar {
+                width: 100%;
+                min-width: unset;
+                height: auto;
+                padding: 1.5rem 1rem;
+                border-radius: 0;
+            }
+
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="light-theme">
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile-info">
+                <img src="public/profile.jpg" alt="Profile Picture" class="profile-img">
+                <h1 class="name">Elif Buse Holozlu</h1>
+                <p class="title">Frontend Developer | React & Web Technologies</p>
+
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>elifbuseholozlu@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>+90 544 483 08 01</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Ankara, Turkey</p>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/elif-buse-holozlu-ba4121353/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/elifbuseh" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://instagram.com/elifbuseh" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                </div>
+                <a href="public/Elif_Buse_Holozlu_CV.pdf" download class="download-btn">
+                    <i class="fas fa-download"></i> CV İndir
+                </a>
+                </div>
+        </div>
+
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="nav-buttons">
+                    <button class="nav-btn active" data-target="about"><i class="fas fa-user"></i> About</button>
+                    <button class="nav-btn" data-target="experiences"><i class="fas fa-briefcase"></i> Experiences</button>
+                    <button class="nav-btn" data-target="projects"><i class="fas fa-code"></i> Projects</button>
+                    <button class="nav-btn" data-target="skills"><i class="fas fa-graduation-cap"></i> Skills</button>
+                    <button class="nav-btn" data-target="contact"><i class="fas fa-envelope"></i> Contact</button>
+                </div>
+                <div class="theme-toggle">
+                    <button id="theme-toggle-btn"><i class="fas fa-moon"></i> Dark Theme</button>
+                </div>
+            </div>
+
+            <div id="about" class="content-card active">
+                <section class="about-section">
+                    <h2><i class="fas fa-user"></i> About Me</h2>
+                    <p class="about-text">
+                     Hello! I'm Elif Buse Holozlu, a Software Engineering student.
+                     With a passion for web technologies, I enjoy creating modern and user-friendly interfaces.
+                     I focus on developing dynamic and interactive projects using technologies like React, JavaScript, and CSS.
+                     I'm always open to learning new technologies and constantly improving myself.
+                    </p>
+                    <div class="about-info-cards">
+                        <div class="info-card">
+                            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                            <ul>
+                                <li><span class="info-label">University:</span> European University of Lefke, Software Engineering</li>
+                                <li><span class="info-label">Graduation:</span> 2026</li>
+                                <li><span class="info-label">High School:</span> Gölbaşı Anatolian High School</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <h3><i class="fas fa-star"></i> Interests</h3>
+                            <ul>
+                                <li>Web development</li>
+                                <li>UI/UX design</li>
+                                <li>Front-end technologies</li>
+                                <li>Software architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="experiences" class="content-card">
+                <section class="experience-section">
+                    <h2><i class="fas fa-briefcase"></i> My Experiences</h2>
+                    <p class="section-subtitle">
+                        Experiences and projects I have gained in the field of software development
+                    </p>
+                    <div class="experience-container">
+                        <div class="experience-card">
+                            <h3><i class="fas fa-building"></i> Summer Internship</h3>
+                            <p><strong>Company:</strong> Information and Communication Technologies Authority</p>
+                            <p><strong>Location:</strong> Ankara, Turkey</p>
+                            <p><strong>Period:</strong> June 2025 - August 2025</p>
+                            <h4>Responsibilities & Achievements</h4>
+                            <ul>
+                                <li>Developed user interfaces using React and modern JavaScript technologies</li>
+                                <li>Created mobile-friendly web applications by applying responsive design principles</li>
+                                <li>Built backend services by developing RESTful APIs with Spring Boot</li>
+                                <li>Gained experience in data processing using PostgreSQL database management and SQL queries</li>
+                                <li>Applied user experience (UX) and user interface (UI) design principles</li>
+                                <li>Worked on frontend performance optimization and code quality improvements</li>
+                                <li>Gained experience in team collaboration using Git version control system</li>
+                            </ul>
+                            <h4>Technologies Used</h4>
+                            <div class="project-tech-stack">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Spring Boot</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="projects" class="content-card">
+                <section class="projects-section">
+                    <h2><i class="fas fa-code"></i> My Projects</h2>
+                    <div class="projects-list">
+                        <div class="project-card">
+                            <h3><i class="fas fa-desktop"></i> Call Center Management System</h3>
+                            <p>
+                                A comprehensive call center management system I developed using Java Spring Boot, React, and PostgreSQL.
+                                Includes real-time analytics, customer relationship management, and advanced reporting features.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Spring Boot</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">JWT</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/elifbuseh/call-center" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <h3><i class="fas fa-database"></i> Nodora</h3>
+                            <p>
+                                A backend project I developed with Java Spring Boot.
+                                Includes RESTful API design, database management, and secure authentication system.
+                                Built a modern web application using Maven for dependency management and PostgreSQL database.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Spring Boot</span>
+                                <span class="tech-tag">Spring Security</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Maven</span>
+                            </div>
+                            <div class="project-links">
+                                <span style="opacity: 0.6; cursor: not-allowed;"><i class="fab fa-github"></i> GitHub (Coming Soon)</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="skills" class="content-card">
+                <section class="skills-section">
+                    <h2><i class="fas fa-graduation-cap"></i> Technical Skills</h2>
+                    <div class="skills-categories-wrapper">
+                        <div class="skills-category">
+                            <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
+                            <div class="skills-list">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TypeScript</span>
+                            </div>
+                        </div>
+                        <div class="skills-category">
+                            <h3><i class="fas fa-cogs"></i> Backend</h3>
+                            <div class="skills-list">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Spring Boot</span>
+                                <span class="tech-tag">RESTful API</span>
+                                <span class="tech-tag">JWT</span>
+                            </div>
+                        </div>
+                        <div class="skills-category">
+                            <h3><i class="fas fa-database"></i> Databases</h3>
+                            <div class="skills-list">
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">SQL</span>
+                            </div>
+                        </div>
+                        <div class="skills-category">
+                            <h3><i class="fas fa-tools"></i> Tools & Others</h3>
+                            <div class="skills-list">
+                                <span class="tech-tag">Git</span>
+                                <span class="tech-tag">GitHub</span>
+                                <span class="tech-tag">Maven</span>
+                                <span class="tech-tag">UI/UX Design</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="margin: 2rem 0; border-color: var(--light-card-border);" />
+                    <h2><i class="fas fa-star"></i> Additional Skills</h2>
+                    <div class="additional-skills-wrapper">
+                        <div class="info-card">
+                            <h3>Languages</h3>
+                            <div class="language-item">
+                                <span class="language-name">Turkish</span>
+                                <span class="language-level level-native"><i class="fas fa-star"></i> Native</span>
+                            </div>
+                            <div class="language-item">
+                                <span class="language-name">English</span>
+                                <span class="language-level level-advanced"><i class="fas fa-check-circle"></i> Advanced</span>
+                            </div>
+                            <div class="language-item">
+                                <span class="language-name">German</span>
+                                <span class="language-level level-intermediate"><i class="fas fa-circle"></i> Intermediate</span>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <h3>Trainings I've Attended</h3>
+                            <div class="trainings-list">
+                                <div class="training-item">
+                                    <span>Sisterslab Adalovelace Academy Java'ya Giriş Eğitimi</span>
+                                    <span class="training-status status-completed">Completed</span>
+                                </div>
+                                <div class="training-item">
+                                    <span>Sisterslab Adalovelace Academy Front-End Geliştirmeye Giriş Eğitimi</span>
+                                    <span class="training-status status-completed">Completed</span>
+                                </div>
+                                <div class="training-item">
+                                    <span>Sisterslab Adalovelace Academy Python ile Kodlamaya Giriş Eğitimi</span>
+                                    <span class="training-status status-completed">Completed</span>
+                                </div>
+                                <div class="training-item">
+                                    <span>Sisterslab Adalovelace Academy UI/UX Giriş Eğitimi</span>
+                                    <span class="training-status status-completed">Completed</span>
+                                </div>
+                                <div class="training-item">
+                                    <span>Sisterslab Adalovelace Academy Veri Bilimine Giriş Eğitimi</span>
+                                    <span class="training-status status-completed">Completed</span>
+                                </div>
+                                <div class="training-item">
+                                    <span>Huawei AI Bootcamp</span>
+                                    <span class="training-status status-ongoing">Ongoing</span>
+                                </div>
+                                <div class="training-item">
+                                    <span>Miuul Yapay Zeka Yaz Kampı 2025</span>
+                                    <span class="training-status status-ongoing">Ongoing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="contact" class="content-card">
+                <section class="contact-section">
+                    <h2><i class="fas fa-envelope"></i> Get in Touch</h2>
+                    <p>For questions, job offers, or feedback, you can reach me via the email address below.</p>
+                    <form class="contact-form" action="mailto:elifbuseholozlu@gmail.com" method="post" enctype="text/plain">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name">
+                        <label for="email">Your Email:</label>
+                        <input type="email" id="email" name="email" placeholder="youremail@example.com">
+                        <label for="message">Your Message:</label>
+                        <textarea id="message" name="message" placeholder="Your Message..."></textarea>
+                        <button type="submit">Send Email</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navButtons = document.querySelectorAll('.nav-btn');
+            const contentCards = document.querySelectorAll('.content-card');
+            const themeToggleBtn = document.getElementById('theme-toggle-btn');
+            const body = document.body;
+
+            themeToggleBtn.addEventListener('click', () => {
+                if (body.classList.contains('light-theme')) {
+                    body.classList.remove('light-theme');
+                    body.classList.add('dark-theme');
+                    themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i> Light Theme';
+                } else {
+                    body.classList.remove('dark-theme');
+                    body.classList.add('light-theme');
+                    themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i> Dark Theme';
+                }
+            });
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    navButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const targetId = button.getAttribute('data-target');
+                    contentCards.forEach(card => {
+                        if (card.id === targetId) {
+                            card.classList.add('active');
+                        } else {
+                            card.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
