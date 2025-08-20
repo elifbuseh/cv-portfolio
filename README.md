@@ -1,12 +1,72 @@
-# React + Vite
+# Elif Buse Holozlu - Kişisel Portfolyo Web Sitesi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Merhaba! Ben Elif Buse Holozlu. Bu depo, yazılım mühendisliği alanındaki yeteneklerimi ve projelerimi sergilediğim kişisel portfolyo web sitemin kaynak kodunu içeriyor.
 
-Currently, two official plugins are available:
+## 🚀 Proje Hakkında
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Bu site, Frontend Developer olarak edindiğim becerileri ve deneyimleri sergilemek amacıyla modern ve duyarlı bir tasarımla geliştirilmiştir. Ziyaretçiler, site üzerinden eğitim geçmişimi, staj deneyimlerimi, teknik becerilerimi ve yaptığım projeleri inceleyebilir, hatta CV'mi indirebilirler.
 
-## Expanding the ESLint configuration
+### Sitedeki Bölümler:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **About:** Eğitim geçmişim, ilgi alanlarım ve kariyer hedeflerim hakkında bilgiler.
+* **Experiences:** Bilgi Teknolojileri ve İletişim Kurumu'ndaki stajım gibi deneyimlerimi detaylandırdığım bölüm.
+* **Projects:** "Call Center Management System" ve "Nodora" gibi geliştirdiğim kişisel projeler.
+* **Skills:** Frontend, Backend, Veritabanı ve kullandığım diğer araçları içeren teknik becerilerim.
+* **Contact:** Benimle doğrudan iletişime geçebileceğiniz bir iletişim formu.
+
+## 🛠 Kullanılan Teknolojiler
+
+* **Frontend:** HTML, CSS, JavaScript, React, TypeScript
+* **Backend (Proje Amaçlı):** Java, Spring Boot, RESTful API, JWT
+* **Veritabanı:** PostgreSQL, SQL
+* **Diğer:** Git, GitHub, Maven, UI/UX Tasarım İlkeleri
+
+## ✨ Canlı Siteye Erişin
+
+Portfolyo web sitesinin canlı versiyonuna aşağıdaki linkten ulaşabilirsiniz:
+
+**[https://elifbuseh.github.io/cv-portfolio/](https://elifbuseh.github.io/cv-portfolio/)**
+
+## 📄 CV'mi İndirin
+
+Sitemdeki "CV İndir" butonuna tıklayarak en güncel özgeçmişime doğrudan erişebilirsiniz.
+# Elif Buse Holozlu - Personal Portfolio Website
+
+Hello! I'm Elif Buse Holozlu. This repository contains the source code for my personal portfolio website, where I showcase my skills and projects in the field of software engineering.
+
+## 🚀 About the Project
+
+This site was developed with a modern and responsive design to showcase my skills and experiences as a Frontend Developer. Visitors can explore my educational background, internship experience, technical skills, and personal projects, and even download my CV directly.
+
+### Sections on the Website:
+
+* **About:** Information about my educational background, interests, and career goals.
+* **Experiences:** A detailed section on my professional experiences, including my summer internship at the Information and Communication Technologies Authority.
+* **Projects:** Personal projects I've developed, such as the "Call Center Management System" and "Nodora."
+* **Skills:** My technical skills, including Frontend, Backend, Databases, and other tools.
+* **Contact:** A contact form to get in touch with me directly.
+
+## 🛠 Technologies Used
+
+* **Frontend:** HTML, CSS, JavaScript, React, TypeScript
+* **Backend (for Projects):** Java, Spring Boot, RESTful API, JWT
+* **Database:** PostgreSQL, SQL
+* **Other:** Git, GitHub, Maven, UI/UX Design Principles
+
+## ✨ Access the Live Site
+
+You can access the live version of this portfolio website at the following link:
+
+**[https://elifbuseh.github.io/cv-portfolio/](https://elifbuseh.github.io/cv-portfolio/)**
+
+## 📄 Download My CV
+
+You can download my most up-to-date resume directly by clicking the "Download CV" button on the site.
+
+## 🤝 Contact
+
+If you have any feedback or questions, please feel free to contact me via email at [elifbuseholozlu@gmail.com](mailto:elifbuseholozlu@gmail.com), or through my LinkedIn and GitHub profiles.
+
+## 🤝 İletişim
+
+Herhangi bir geri bildiriminiz veya sorunuz varsa, benimle [elifbuseholozlu@gmail.com](mailto:elifbuseholozlu@gmail.com) üzerinden veya LinkedIn ve GitHub profillerim aracılığıyla iletişime geçmekten çekinmeyin.
